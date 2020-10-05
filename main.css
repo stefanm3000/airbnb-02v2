@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
+    grid-template-rows: 1fr 1fr;
+    gap: 1%;
+    margin: 8%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+} 
+
+a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.div-grid-areas {
+    position: relative;
+}
+
+.place-photo {
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+    max-height: 400px;
+    min-height: 150px;
+    border-radius: 3.5%;
+  }
+
+p {
+    font-size: 16px;
+    font-style: normal;
+    margin: 2px;
+    font-weight: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%      
+}
+
+i.material-icons {
+    font-size: 16px;
+    color: #F41A52;
+    padding-right: 5px;
+}
+
+.price {
+    padding: 2px 0px 0px 0px;
+}
+
+.like-btn { 
+    z-index: 3;
+    position: absolute;
+    top: 5%;
+    left: 93%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    font-size: 16px;
+    padding: 0px 0px;
+    border: none;
+    background-repeat:no-repeat;
+    cursor:pointer;
+    overflow: hidden;
+    background-color: transparent;
+    outline: none;
+}
+
+.like-button-image {
+    width: 25px;
+    opacity: 0.8;
+    background-color: transparent;
+    fill: gray;
+}
+
+.popup {
+    outline: none;
+    border: none;
+    background-color: white;
+    text-decoration: underline;
+    padding: 7px 0px 70px 1px;
+    color: gray;
+    font-size: 14px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.paren {
+    color: gray;
+}
+
+.new-rating { 
+    font-size: 16px;    
+}
+.ratingAvg {
+    padding-right: 5px;
+}
+.numberOfReviews {
+    padding-right: 5px;
+}
+
+.pricePerNight {
+    font-weight: bold;
+    font-size: 15px;
+}
+

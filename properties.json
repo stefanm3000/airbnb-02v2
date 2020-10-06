@@ -47,7 +47,7 @@
     {
        "link":"https://www.airbnb.com/rooms/44955389",
       "imageUrl":"images/5.webp",
-      "rating":"New", 
+      "rating":0, 
       "numOfReviews":null,
       "propSize":"Entire cottage",
       "location":"Mozgovo",
@@ -69,7 +69,7 @@
     {
        "link":"https://www.airbnb.com/rooms/44534575",
       "imageUrl":"images/7.webp",
-      "rating":"New", 
+      "rating":0, 
       "numOfReviews":null,
       "propSize":"Entire house",
       "location":"Gamzigrad",
@@ -91,7 +91,7 @@
     {
        "link":"https://www.airbnb.com/rooms/45509963",
        "imageUrl":"images/9.jpg",
-       "rating":"New", 
+       "rating":0, 
        "numOfReviews":null,
        "propSize":"Private room",
        "location":"Sokobanja",
@@ -102,7 +102,7 @@
     {
        "link":"https://www.airbnb.com/rooms/2673790",
        "imageUrl":"images/10.webp",
-       "rating":4.94, 
+       "rating":5, 
        "numOfReviews":18,
        "propSize":"Private room",
        "location":"Despotovac",

@@ -8,7 +8,8 @@ fetch("properties.json")
         mainObj = data;
         populateDivs();
         hideFavIcon();
-        noReviewsCase();
+        noReviewsCase()
+        ratingNewCase();
     });
 
 function populateDivs() {
@@ -105,7 +106,7 @@ function populateDivs() {
 
     for (let i = 0; i < mainObj.properties.length; i++){
 
-        averageRating[i].innerHTML = mainObj.properties[i].rating;
+        averageRating[i].innerHTML = mainObj.properties[i].rating.toFixed(2);
         propertyLink[i].href = mainObj.properties[i].link;
         theImageUrl[i].src = mainObj.properties[i].imageUrl;
         reviewsNumber[i].innerHTML = ('(') + mainObj.properties[i].numOfReviews + (')');
@@ -117,13 +118,20 @@ function populateDivs() {
         likeButtonLink[i].href = "https://www.airbnb.rs/login";
         likeButtonImage[i].src = "images/pngegg.png";
 
-    }    
-}
+        if (mainObj.properties[i].rating === 5.00 || 
+            mainObj.properties[i].rating === 4.00 ||
+            mainObj.properties[i].rating === 3.00 ||
+            mainObj.properties[i].rating === 2.00 ||
+            mainObj.properties[i].rating === 1.00) {
+                averageRating[i].innerHTML = mainObj.properties[i].rating.toFixed(1)
+            };
+    };
+};
     
 function hideFavIcon(){
     for (let i = 0; i < mainObj.properties.length; i++){
         if (mainObj.properties[i].numOfReviews === 0) {
-            document.getElementsByClassName('material-icons')[i].style.visibility = "hidden"
+            document.getElementsByClassName('material-icons')[i].style.visibility = "hidden";
         }
     }
 }
@@ -140,3 +148,11 @@ function noReviewsCase(){
             
     }
 }
+
+function ratingNewCase() {
+        for (let i = 0; i < mainObj.properties.length; i++){
+            if (mainObj.properties[i].rating === 0.00) {
+                document.getElementsByClassName('ratingAvg')[i].innerHTML = "New"
+            };
+        };
+};

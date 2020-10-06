@@ -8,7 +8,7 @@ fetch("properties.json")
         mainObj = data;
         populateDivs();
         hideFavIcon();
-        noReviewsCase()
+        numOfReviewsCase()
         ratingNewCase();
     });
 
@@ -103,6 +103,7 @@ function populateDivs() {
     let placeDescription = document.getElementsByClassName('place-description');
     let likeButtonLink = document.getElementsByClassName('likeButtonLink');
     let likeButtonImage = document.getElementsByClassName('like-button-image');
+   
 
     for (let i = 0; i < mainObj.properties.length; i++){
 
@@ -112,7 +113,7 @@ function populateDivs() {
         reviewsNumber[i].innerHTML = ('(') + mainObj.properties[i].numOfReviews + (')');
         propertySize[i].innerHTML = ("<br>") + mainObj.properties[i].propSize + (' · ');
         placeLocation[i].innerHTML = mainObj.properties[i].location;
-        ppNight[i].innerHTML = ('\$') + mainObj.properties[i].pricePerNight + (' / night') + ("<br>");
+        ppNight[i].innerHTML = (('\$') + mainObj.properties[i].pricePerNight).bold() + (' / night') + ("<br>");
         totalPrice[i].innerHTML = ('\$') + mainObj.properties[i].priceTotal + (' total');
         placeDescription[i].innerHTML = mainObj.properties[i].description;
         likeButtonLink[i].href = "https://www.airbnb.rs/login";
@@ -132,24 +133,32 @@ function hideFavIcon(){
     for (let i = 0; i < mainObj.properties.length; i++){
         if (mainObj.properties[i].numOfReviews === 0) {
             document.getElementsByClassName('material-icons')[i].style.visibility = "hidden";
-        }
-    }
-}
+        };
+    };
+};
 
-function noReviewsCase(){
+function numOfReviewsCase(){
         for (let i = 0; i < mainObj.properties.length; i++){
             
             if (mainObj.properties[i].numOfReviews === null) {
                 document.getElementsByClassName('paren')[i].innerHTML = null;
              }; 
             if (mainObj.properties[i].numOfReviews === 0) {
-                document.getElementsByClassName('paren')[i].innerHTML = ('No reviews yet');
+                document.getElementsByClassName('ratingAvg')[i].innerHTML = ('No reviews yet');
+                document.getElementsByClassName('paren')[i].style.visibility = "hidden";
             };
-            
-    }
-}
+            if (mainObj.properties[i].numOfReviews === 1) {
+                document.getElementsByClassName('ratingAvg')[i].innerHTML = ('1 review');
+                document.getElementsByClassName('paren')[i].style.visibility = "hidden";
+            };
+            if (mainObj.properties[i].numOfReviews === 2) {
+                document.getElementsByClassName('ratingAvg')[i].innerHTML = ('2 reviews');
+                document.getElementsByClassName('paren')[i].style.visibility = "hidden";
+            };
+    };
+};
 
-function ratingNewCase() {
+function ratingNewCase(){
         for (let i = 0; i < mainObj.properties.length; i++){
             if (mainObj.properties[i].rating === 0.00) {
                 document.getElementsByClassName('ratingAvg')[i].innerHTML = "New"

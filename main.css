@@ -71,7 +71,7 @@ i.material-icons {
 }
 
 .like-button-image {
-    width: 25px;
+    width: 23px;
     opacity: 0.8;
     background-color: transparent;
     fill: gray;
@@ -106,7 +106,6 @@ i.material-icons {
 }
 
 .pricePerNight {
-    font-weight: bold;
     font-size: 15px;
 }
 

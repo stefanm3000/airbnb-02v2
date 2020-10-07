@@ -7,9 +7,7 @@ fetch("properties.json")
     .then(function(data) {
         mainObj = data;
         populateDivs();
-        hideFavIcon();
-        numOfReviewsCase()
-        ratingNewCase();
+        numOfReviewsCase();
     });
 
 function populateDivs() {
@@ -118,7 +116,7 @@ function populateDivs() {
         placeDescription[i].innerHTML = mainObj.properties[i].description;
         likeButtonLink[i].href = "https://www.airbnb.rs/login";
         likeButtonImage[i].src = "images/pngegg.png";
-
+        
         if (mainObj.properties[i].rating === 5.00 || 
             mainObj.properties[i].rating === 4.00 ||
             mainObj.properties[i].rating === 3.00 ||
@@ -129,14 +127,6 @@ function populateDivs() {
     };
 };
     
-function hideFavIcon(){
-    for (let i = 0; i < mainObj.properties.length; i++){
-        if (mainObj.properties[i].numOfReviews === 0) {
-            document.getElementsByClassName('material-icons')[i].style.visibility = "hidden";
-        };
-    };
-};
-
 function numOfReviewsCase(){
         for (let i = 0; i < mainObj.properties.length; i++){
             
@@ -144,6 +134,7 @@ function numOfReviewsCase(){
                 document.getElementsByClassName('paren')[i].innerHTML = null;
              }; 
             if (mainObj.properties[i].numOfReviews === 0) {
+                document.getElementsByClassName('material-icons')[i].style.visibility = "hidden";
                 document.getElementsByClassName('ratingAvg')[i].innerHTML = ('No reviews yet');
                 document.getElementsByClassName('paren')[i].style.visibility = "hidden";
             };
@@ -155,13 +146,8 @@ function numOfReviewsCase(){
                 document.getElementsByClassName('ratingAvg')[i].innerHTML = ('2 reviews');
                 document.getElementsByClassName('paren')[i].style.visibility = "hidden";
             };
-    };
-};
-
-function ratingNewCase(){
-        for (let i = 0; i < mainObj.properties.length; i++){
             if (mainObj.properties[i].rating === 0.00) {
-                document.getElementsByClassName('ratingAvg')[i].innerHTML = "New"
+                document.getElementsByClassName('ratingAvg')[i].innerHTML = "New";
             };
-        };
+    };
 };

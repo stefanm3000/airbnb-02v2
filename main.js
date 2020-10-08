@@ -1,4 +1,4 @@
-import {numOfReviewsCase} from './functionOne.js'
+import {numOfReviewsCase} from './functionOne.js';
 
 let mainObj = {};
 

@@ -109,6 +109,39 @@
        "description":"Jagor",
        "pricePerNight":20,
        "priceTotal":91  
+    },
+    {
+       "link":"https://www.airbnb.com/rooms/2673790",
+       "imageUrl":"images/10.webp",
+       "rating":4.94, 
+       "numOfReviews":18,
+       "propSize":"Private room",
+       "location":"Despotovac",
+       "description":"Jagor",
+       "pricePerNight":20,
+       "priceTotal":91  
+    },
+    {
+       "link":"https://www.airbnb.com/rooms/2673790",
+       "imageUrl":"images/10.webp",
+       "rating":4.94, 
+       "numOfReviews":18,
+       "propSize":"Private room",
+       "location":"Despotovac",
+       "description":"Jagor",
+       "pricePerNight":20,
+       "priceTotal":91  
+    },
+    {
+       "link":"https://www.airbnb.com/rooms/2673790",
+       "imageUrl":"images/10.webp",
+       "rating":4.94, 
+       "numOfReviews":18,
+       "propSize":"Private room",
+       "location":"Despotovac",
+       "description":"Jagor",
+       "pricePerNight":20,
+       "priceTotal":91  
     }
    ]
 }

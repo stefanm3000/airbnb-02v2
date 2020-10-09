@@ -1,4 +1,7 @@
 import {createTheThings} from './createthethings.js';
+document.addEventListener("DOMContentLoaded", main());
+
+function main(){
 
 let mainObj = {};
 
@@ -91,6 +94,5 @@ function populateDivs() {
      };
         
         
-};
-
-
+    };
+}

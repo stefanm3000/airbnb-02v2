@@ -7,7 +7,7 @@
     grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
     grid-template-rows: 1fr 1fr;
     gap: 1%;
-    margin: 8%;
+    margin: 12%;
 }
 
 body {
@@ -82,7 +82,7 @@ i.material-icons {
     border: none;
     background-color: white;
     text-decoration: underline;
-    padding: 7px 0px 70px 1px;
+    padding: 7px 0px 30px 1px;
     color: gray;
     font-size: 14px;
 }

@@ -1,7 +1,7 @@
-import {createTheThings} from './createthethings.js';
-document.addEventListener("DOMContentLoaded", main());
+"use strict"
 
-function main(){
+//import {createTheThings} from './createthethings.js';
+//import {imagesLinksButtons} from './functionOne.js';
 
 let mainObj = {};
 
@@ -18,31 +18,108 @@ function populateDivs() {
 
     for (let i = 0; i < mainObj.properties.length; i++) {
     
-        createTheThings();
-    
-        let averageRating = document.getElementsByClassName('ratingAvg');
-        let propertyLink = document.getElementsByClassName('propLink');
-        let theImageUrl = document.getElementsByClassName('imageUrl');
-        let reviewsNumber = document.getElementsByClassName('numberOfReviews');
-        let propertySize = document.getElementsByClassName('propSize');
-        let placeLocation = document.getElementsByClassName('location');
-        let ppNight = document.getElementsByClassName('pricePerNight');
-        let totalPrice = document.getElementsByClassName('priceTotal');
-        let placeDescription = document.getElementsByClassName('place-description');
-        let likeButtonLink = document.getElementsByClassName('likeButtonLink');
-        let likeButtonImage = document.getElementsByClassName('like-button-image');
+        let divGridAreas = document.createElement("div");
+        divGridAreas.setAttribute('class', 'div-grid-areas');
 
+        let propertyLink = document.createElement("a");
+        propertyLink.setAttribute('class', 'propLink');
+
+        let theImageUrl = document.createElement("img");
+        theImageUrl.setAttribute('class', 'imageUrl place-photo');
+
+        let ratingDiv = document.createElement("div");
+        ratingDiv.setAttribute('class', 'rating-div');
+
+        let paragraph = document.createElement("p");
+        paragraph.setAttribute('class', 'paragraph');
+
+        let span = document.createElement("span");
+        span.setAttribute('class','span');
+
+        let icons = document.createElement("i");
+        icons.setAttribute('class', 'material-icons my-icon');
+
+        let averageRatingTwo = document.createElement("span");
+        averageRatingTwo.setAttribute('class', 'ratingAvg');
+
+        let paren = document.createElement("span");
+        paren.setAttribute('class', 'paren');
+
+        let reviewsNumber = document.createElement("span");
+        reviewsNumber.setAttribute('class', 'numberOfReviews');
+
+        let propertySize = document.createElement("span");
+        propertySize.setAttribute('class', 'propSize');
+
+        let placeLocation = document.createElement("span");
+        placeLocation.setAttribute('class', 'location');
+
+        let br = document.createElement("br");
+        let placeDescription = document.createElement("span");
+        placeDescription.setAttribute('class','place-description');
+
+        let price = document.createElement("p");
+        price.setAttribute('class', 'price');
+
+        let ppNight = document.createElement("span");
+        ppNight.setAttribute('class', 'pricePerNight');
+
+        let popup = document.createElement("button");
+        popup.setAttribute('class', 'popup');
+
+        let totalPrice = document.createElement("span");
+        totalPrice.setAttribute('class', 'priceTotal');
+
+        let likeButtonLink = document.createElement("A");
+        likeButtonLink.setAttribute('class', 'likeButtonLink');
+
+        let likeButton = document.createElement("button");
+        likeButton.setAttribute('class','like-btn');
+
+        let likeButtonImage = document.createElement("img");
+        likeButtonImage.setAttribute('class', 'like-button-image');
+
+        let container = document.getElementById('grid-container'); 
+        icons.innerHTML = "star";
+
+        span.appendChild(icons);
+        paragraph.appendChild(span);
+        paragraph.appendChild(averageRatingTwo);
+        paragraph.appendChild(paren);
+        ratingDiv.appendChild(paragraph);
+        propertyLink.appendChild(ratingDiv);
+        propertyLink.appendChild(theImageUrl);
+        divGridAreas.appendChild(propertyLink);
+        divGridAreas.appendChild(price);
+        container.appendChild(divGridAreas);
+        paren.appendChild(reviewsNumber);
+        propertyLink.appendChild(paragraph);
+        paragraph.appendChild(propertySize);
+        paragraph.appendChild(placeLocation);
+        paragraph.appendChild(br);
+        paragraph.appendChild(placeDescription);
+        divGridAreas.appendChild(price);
+        price.appendChild(ppNight);
+        price.appendChild(popup);
+        popup.appendChild(totalPrice);
+        divGridAreas.appendChild(likeButtonLink);
+        likeButtonLink.appendChild(likeButton);
+        likeButton.appendChild(likeButtonImage);
+        container.appendChild(divGridAreas);
+    
+        
         function imagesLinksButtons(){
-            likeButtonLink[i].href = "https://www.airbnb.rs/login";
-            likeButtonImage[i].src = "images/pngegg.png";
-            theImageUrl[i].src = mainObj.properties[i].imageUrl;
-            propertyLink[i].href = mainObj.properties[i].link;
+            document.getElementsByClassName('likeButtonLink')[i].href = "https://www.airbnb.rs/login";
+            document.getElementsByClassName('like-button-image')[i].src = "images/pngegg.png";
+            document.getElementsByClassName('imageUrl')[i].src = mainObj.properties[i].imageUrl;
+            document.getElementsByClassName('propLink')[i].href = mainObj.properties[i].link;
         };
+        
         
         function ratingAndIcon(){
 
-            averageRating[i].innerHTML = mainObj.properties[i].rating.toFixed(2);
-            reviewsNumber[i].innerHTML = ('(') + mainObj.properties[i].numOfReviews + (')');
+            document.getElementsByClassName('ratingAvg')[i].innerHTML = mainObj.properties[i].rating.toFixed(2);
+            document.getElementsByClassName('numberOfReviews')[i].innerHTML = ('(') + mainObj.properties[i].numOfReviews + (')');
         
             if (mainObj.properties[i].rating === 0.00) {
                 document.getElementsByClassName('ratingAvg')[i].innerHTML = "New"};
@@ -60,7 +137,7 @@ function populateDivs() {
                 mainObj.properties[i].rating === 3.00 ||
                 mainObj.properties[i].rating === 2.00 ||
                 mainObj.properties[i].rating === 1.00) {
-                    averageRating[i].innerHTML = mainObj.properties[i].rating.toFixed(1)
+                    document.getElementsByClassName('ratingAvg')[i].innerHTML = mainObj.properties[i].rating.toFixed(1)
                 };
             
             if (mainObj.properties[i].numOfReviews === 1) {
@@ -76,15 +153,15 @@ function populateDivs() {
         
         function descriptionCard(){
 
-            propertySize[i].innerHTML = ("<br>") + mainObj.properties[i].propSize + (' · ');
-            placeLocation[i].innerHTML = mainObj.properties[i].location;
-            placeDescription[i].innerHTML = mainObj.properties[i].description;
+            document.getElementsByClassName('propSize')[i].innerHTML = ("<br>") + mainObj.properties[i].propSize + (' · ');
+            document.getElementsByClassName('location')[i].innerHTML = mainObj.properties[i].location;
+            document.getElementsByClassName('place-description')[i].innerHTML = mainObj.properties[i].description;
         };
         
         function ppNightAndTotal(){
 
-            ppNight[i].innerHTML = (('\$') + mainObj.properties[i].pricePerNight).bold() + (' / night') + ("<br>");
-            totalPrice[i].innerHTML = ('\$') + mainObj.properties[i].priceTotal + (' total');
+            document.getElementsByClassName('pricePerNight')[i].innerHTML = (('\$') + mainObj.properties[i].pricePerNight).bold() + (' / night') + ("<br>");
+            document.getElementsByClassName('priceTotal')[i].innerHTML = ('\$') + mainObj.properties[i].priceTotal + (' total');
         };
 
         imagesLinksButtons();
@@ -94,5 +171,5 @@ function populateDivs() {
      };
         
         
-    };
-}
+};
+

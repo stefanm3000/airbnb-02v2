@@ -1,6 +1,6 @@
 "use strict"
 
-//import {createTheThings} from './createthethings.js';
+import {createTheThings} from './createthethings.js';
 //import {imagesLinksButtons} from './functionOne.js';
 
 let mainObj = {};
@@ -11,6 +11,7 @@ fetch("properties.json")
 })
     .then(function(data) {
         mainObj = data;
+        createTheThings();
         populateDivs();
     });
 
@@ -54,7 +55,6 @@ function populateDivs() {
         let placeLocation = document.createElement("span");
         placeLocation.setAttribute('class', 'location');
 
-        let br = document.createElement("br");
         let placeDescription = document.createElement("span");
         placeDescription.setAttribute('class','place-description');
 
@@ -80,35 +80,19 @@ function populateDivs() {
         likeButtonImage.setAttribute('class', 'like-button-image');
 
         let container = document.getElementById('grid-container'); 
+        
         icons.innerHTML = "star";
 
-        span.appendChild(icons);
-        paragraph.appendChild(span);
-        paragraph.appendChild(averageRatingTwo);
-        paragraph.appendChild(paren);
-        ratingDiv.appendChild(paragraph);
-        propertyLink.appendChild(ratingDiv);
-        propertyLink.appendChild(theImageUrl);
-        divGridAreas.appendChild(propertyLink);
-        divGridAreas.appendChild(price);
         container.appendChild(divGridAreas);
-        paren.appendChild(reviewsNumber);
-        propertyLink.appendChild(paragraph);
-        paragraph.appendChild(propertySize);
-        paragraph.appendChild(placeLocation);
-        paragraph.appendChild(br);
-        paragraph.appendChild(placeDescription);
-        divGridAreas.appendChild(price);
-        price.appendChild(ppNight);
-        price.appendChild(popup);
-        popup.appendChild(totalPrice);
-        divGridAreas.appendChild(likeButtonLink);
-        likeButtonLink.appendChild(likeButton);
-        likeButton.appendChild(likeButtonImage);
-        container.appendChild(divGridAreas);
-    
-        
+
         function imagesLinksButtons(){
+            
+            propertyLink.appendChild(theImageUrl);
+            likeButtonLink.appendChild(likeButton);
+            likeButton.appendChild(likeButtonImage);
+            divGridAreas.appendChild(propertyLink);
+            divGridAreas.appendChild(likeButtonLink);
+
             document.getElementsByClassName('likeButtonLink')[i].href = "https://www.airbnb.rs/login";
             document.getElementsByClassName('like-button-image')[i].src = "images/pngegg.png";
             document.getElementsByClassName('imageUrl')[i].src = mainObj.properties[i].imageUrl;
@@ -117,6 +101,12 @@ function populateDivs() {
         
         
         function ratingAndIcon(){
+
+            paren.appendChild(reviewsNumber);
+            ratingDiv.appendChild(icons);
+            ratingDiv.appendChild(averageRatingTwo);
+            ratingDiv.appendChild(paren);
+            propertyLink.appendChild(ratingDiv);
 
             document.getElementsByClassName('ratingAvg')[i].innerHTML = mainObj.properties[i].rating.toFixed(2);
             document.getElementsByClassName('numberOfReviews')[i].innerHTML = ('(') + mainObj.properties[i].numOfReviews + (')');
@@ -153,12 +143,23 @@ function populateDivs() {
         
         function descriptionCard(){
 
-            document.getElementsByClassName('propSize')[i].innerHTML = ("<br>") + mainObj.properties[i].propSize + (' · ');
-            document.getElementsByClassName('location')[i].innerHTML = mainObj.properties[i].location;
+            propertyLink.appendChild(paragraph);
+            paragraph.appendChild(propertySize);
+            paragraph.appendChild(placeLocation);
+            paragraph.appendChild(placeDescription);
+            divGridAreas.appendChild(propertyLink);
+
+            document.getElementsByClassName('propSize')[i].innerHTML = mainObj.properties[i].propSize + (' · ');
+            document.getElementsByClassName('location')[i].innerHTML = mainObj.properties[i].location + ("<br>");
             document.getElementsByClassName('place-description')[i].innerHTML = mainObj.properties[i].description;
         };
         
         function ppNightAndTotal(){
+
+            price.appendChild(ppNight);
+            price.appendChild(popup);
+            popup.appendChild(totalPrice);
+            divGridAreas.appendChild(price);
 
             document.getElementsByClassName('pricePerNight')[i].innerHTML = (('\$') + mainObj.properties[i].pricePerNight).bold() + (' / night') + ("<br>");
             document.getElementsByClassName('priceTotal')[i].innerHTML = ('\$') + mainObj.properties[i].priceTotal + (' total');

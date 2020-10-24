@@ -1,11 +1,10 @@
 "use strict"
 
-//import {createTheThings} from './createthethings.js';
-//import {imagesLinksButtons} from './functionOne.js';
-
+document.addEventListener('DOMContentLoaded', main);
 
 let mainObj = {};
 
+function main(){
 fetch("properties.json")
     .then(function(resp) {
         return resp.json();
@@ -14,6 +13,7 @@ fetch("properties.json")
         mainObj = data;
         populateDivs();
     });
+}
 
 function populateDivs() {
 
@@ -34,10 +34,10 @@ function populateDivs() {
             
             let likeButtonLink = document.createElement("A");
             likeButtonLink.setAttribute('class', 'likeButtonLink');
-
+    
             let likeButton = document.createElement("button");
             likeButton.setAttribute('class','like-btn');
-
+    
             let likeButtonImage = document.createElement("img");
             likeButtonImage.setAttribute('class', 'like-button-image');
             

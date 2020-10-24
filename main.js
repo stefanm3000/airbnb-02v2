@@ -1,6 +1,6 @@
 "use strict"
 
-import {createTheThings} from './createthethings.js';
+//import {createTheThings} from './createthethings.js';
 //import {imagesLinksButtons} from './functionOne.js';
 
 let mainObj = {};
@@ -11,7 +11,6 @@ fetch("properties.json")
 })
     .then(function(data) {
         mainObj = data;
-        createTheThings();
         populateDivs();
     });
 
@@ -80,10 +79,8 @@ function populateDivs() {
         likeButtonImage.setAttribute('class', 'like-button-image');
 
         let container = document.getElementById('grid-container'); 
-        
-        icons.innerHTML = "star";
 
-        container.appendChild(divGridAreas);
+        icons.innerHTML = "star";
 
         function imagesLinksButtons(){
             
@@ -92,6 +89,7 @@ function populateDivs() {
             likeButton.appendChild(likeButtonImage);
             divGridAreas.appendChild(propertyLink);
             divGridAreas.appendChild(likeButtonLink);
+            container.appendChild(divGridAreas);
 
             document.getElementsByClassName('likeButtonLink')[i].href = "https://www.airbnb.rs/login";
             document.getElementsByClassName('like-button-image')[i].src = "images/pngegg.png";
@@ -122,6 +120,7 @@ function populateDivs() {
             if (mainObj.properties[i].numOfReviews === null) {
                 document.getElementsByClassName('paren')[i].style.visibility = "hidden";
                 };
+
             if (mainObj.properties[i].rating === 5.00 || 
                 mainObj.properties[i].rating === 4.00 ||
                 mainObj.properties[i].rating === 3.00 ||
@@ -147,7 +146,6 @@ function populateDivs() {
             paragraph.appendChild(propertySize);
             paragraph.appendChild(placeLocation);
             paragraph.appendChild(placeDescription);
-            divGridAreas.appendChild(propertyLink);
 
             document.getElementsByClassName('propSize')[i].innerHTML = mainObj.properties[i].propSize + (' · ');
             document.getElementsByClassName('location')[i].innerHTML = mainObj.properties[i].location + ("<br>");

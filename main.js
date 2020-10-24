@@ -3,6 +3,7 @@
 //import {createTheThings} from './createthethings.js';
 //import {imagesLinksButtons} from './functionOne.js';
 
+
 let mainObj = {};
 
 fetch("properties.json")
@@ -15,8 +16,9 @@ fetch("properties.json")
     });
 
 function populateDivs() {
+
     let container = document.getElementById('grid-container');
-    
+
     for (let i = 0; i < mainObj.properties.length; i++) {
 
         let divGridAreas = document.createElement("div");

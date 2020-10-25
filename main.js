@@ -1,10 +1,8 @@
 "use strict"
 
 import {populateDivs} from './populateDivs.js';
+
 document.addEventListener('DOMContentLoaded', main);
-
-export let mainObj = {};
-
 
 function main(){
 fetch("properties.json")
@@ -12,11 +10,6 @@ fetch("properties.json")
         return resp.json();
 })
     .then(function(data) {
-        mainObj = data;
-        populateDivs();
+        populateDivs(data);
     });
 }
-
-
-
-

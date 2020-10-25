@@ -1,12 +1,10 @@
 "use strict"
 
-import {mainObj} from './main.js'
-
-export function populateDivs() {
+export function populateDivs(data) {
 
     let container = document.getElementById('grid-container');
 
-    for (let i = 0; i < mainObj.properties.length; i++) {
+    for (let i = 0; i < data.properties.length; i++) {
 
         let divGridAreas = document.createElement("div");
         divGridAreas.setAttribute('class', 'div-grid-areas');
@@ -37,8 +35,8 @@ export function populateDivs() {
         
             document.getElementsByClassName('likeButtonLink')[i].href = "https://www.airbnb.rs/login";
             document.getElementsByClassName('like-button-image')[i].src = "images/pngegg.png";
-            document.getElementsByClassName('imageUrl')[i].src = mainObj.properties[i].imageUrl;
-            document.getElementsByClassName('propLink')[i].href = mainObj.properties[i].link;
+            document.getElementsByClassName('imageUrl')[i].src = data.properties[i].imageUrl;
+            document.getElementsByClassName('propLink')[i].href = data.properties[i].link;
         };
         
         function ratingAndIcon(){
@@ -66,35 +64,35 @@ export function populateDivs() {
             ratingDiv.appendChild(paren);
             propertyLink.appendChild(ratingDiv);
         
-            document.getElementsByClassName('ratingAvg')[i].innerHTML = mainObj.properties[i].rating.toFixed(2);
-            document.getElementsByClassName('numberOfReviews')[i].innerHTML = ('(') + mainObj.properties[i].numOfReviews + (')');
+            document.getElementsByClassName('ratingAvg')[i].innerHTML = data.properties[i].rating.toFixed(2);
+            document.getElementsByClassName('numberOfReviews')[i].innerHTML = ('(') + data.properties[i].numOfReviews + (')');
         
-            if (mainObj.properties[i].rating === 0.00) {
+            if (data.properties[i].rating === 0.00) {
                 document.getElementsByClassName('ratingAvg')[i].innerHTML = "New"};
         
-            if (mainObj.properties[i].numOfReviews === 0) {
+            if (data.properties[i].numOfReviews === 0) {
                 document.getElementsByClassName('material-icons')[i].style.visibility = "hidden";
                 document.getElementsByClassName('ratingAvg')[i].innerHTML = ('No reviews yet');
                 document.getElementsByClassName('paren')[i].style.visibility = "hidden";};
         
-            if (mainObj.properties[i].numOfReviews === null) {
+            if (data.properties[i].numOfReviews === null) {
                 document.getElementsByClassName('paren')[i].style.visibility = "hidden";
                 };
         
-            if (mainObj.properties[i].rating === 5.00 || 
-                mainObj.properties[i].rating === 4.00 ||
-                mainObj.properties[i].rating === 3.00 ||
-                mainObj.properties[i].rating === 2.00 ||
-                mainObj.properties[i].rating === 1.00) {
-                    document.getElementsByClassName('ratingAvg')[i].innerHTML = mainObj.properties[i].rating.toFixed(1)
+            if (data.properties[i].rating === 5.00 || 
+                data.properties[i].rating === 4.00 ||
+                data.properties[i].rating === 3.00 ||
+                data.properties[i].rating === 2.00 ||
+                data.properties[i].rating === 1.00) {
+                    document.getElementsByClassName('ratingAvg')[i].innerHTML = data.properties[i].rating.toFixed(1)
                 };
             
-            if (mainObj.properties[i].numOfReviews === 1) {
+            if (data.properties[i].numOfReviews === 1) {
                 document.getElementsByClassName('ratingAvg')[i].innerHTML = ('1 review');
                 document.getElementsByClassName('paren')[i].style.visibility = "hidden";
                 };
         
-            if (mainObj.properties[i].numOfReviews === 2) {
+            if (data.properties[i].numOfReviews === 2) {
                 document.getElementsByClassName('ratingAvg')[i].innerHTML = ('2 reviews');
                 document.getElementsByClassName('paren')[i].style.visibility = "hidden";
                 };
@@ -119,9 +117,9 @@ export function populateDivs() {
             paragraph.appendChild(placeLocation);
             paragraph.appendChild(placeDescription);
         
-            document.getElementsByClassName('propSize')[i].innerHTML = mainObj.properties[i].propSize + (' · ');
-            document.getElementsByClassName('location')[i].innerHTML = mainObj.properties[i].location + ("<br>");
-            document.getElementsByClassName('place-description')[i].innerHTML = mainObj.properties[i].description;
+            document.getElementsByClassName('propSize')[i].innerHTML = data.properties[i].propSize + (' · ');
+            document.getElementsByClassName('location')[i].innerHTML = data.properties[i].location + ("<br>");
+            document.getElementsByClassName('place-description')[i].innerHTML = data.properties[i].description;
         };
         
         function ppNightAndTotal(){
@@ -143,8 +141,8 @@ export function populateDivs() {
             popup.appendChild(totalPrice);
             divGridAreas.appendChild(price);
         
-            document.getElementsByClassName('pricePerNight')[i].innerHTML = (('\$') + mainObj.properties[i].pricePerNight).bold() + (' / night') + ("<br>");
-            document.getElementsByClassName('priceTotal')[i].innerHTML = ('\$') + mainObj.properties[i].priceTotal + (' total');
+            document.getElementsByClassName('pricePerNight')[i].innerHTML = (('\$') + data.properties[i].pricePerNight).bold() + (' / night') + ("<br>");
+            document.getElementsByClassName('priceTotal')[i].innerHTML = ('\$') + data.properties[i].priceTotal + (' total');
         };
         
         imagesLinksButtons();

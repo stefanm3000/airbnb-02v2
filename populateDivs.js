@@ -1,45 +1,50 @@
 "use strict"
 
-export function populateDivs(data) {
+let container = document.getElementById('grid-container');
 
-    let container = document.getElementById('grid-container');
+
+
+export function populateDivs(data) {
+    
+    function imagesLinksButtons(i, data){
+            
+        let theImageUrl = document.createElement("img");
+        theImageUrl.setAttribute('class', 'imageUrl place-photo');
+        
+        let likeButtonLink = document.createElement("A");
+        likeButtonLink.setAttribute('class', 'likeButtonLink');
+    
+        let likeButton = document.createElement("button");
+        likeButton.setAttribute('class','like-btn');
+    
+        let likeButtonImage = document.createElement("img");
+        likeButtonImage.setAttribute('class', 'like-button-image');
+        
+        propertyLink.appendChild(theImageUrl);
+        likeButtonLink.appendChild(likeButton);
+        likeButton.appendChild(likeButtonImage);
+        divGridAreas.appendChild(propertyLink);
+        divGridAreas.appendChild(likeButtonLink);
+        container.appendChild(divGridAreas);
+    
+        document.getElementsByClassName('likeButtonLink')[i].href = "https://www.airbnb.rs/login";
+        document.getElementsByClassName('like-button-image')[i].src = "images/pngegg.png";
+        document.getElementsByClassName('imageUrl')[i].src = data.properties[i].imageUrl;
+        document.getElementsByClassName('propLink')[i].href = data.properties[i].link;
+    };
+    
 
     for (let i = 0; i < data.properties.length; i++) {
 
-        let divGridAreas = document.createElement("div");
+        var divGridAreas = document.createElement("div");
         divGridAreas.setAttribute('class', 'div-grid-areas');
-
+        
         let propertyLink = document.createElement("a");
         propertyLink.setAttribute('class', 'propLink');
 
-        function imagesLinksButtons(){
-
-            let theImageUrl = document.createElement("img");
-            theImageUrl.setAttribute('class', 'imageUrl place-photo');
-            
-            let likeButtonLink = document.createElement("A");
-            likeButtonLink.setAttribute('class', 'likeButtonLink');
-    
-            let likeButton = document.createElement("button");
-            likeButton.setAttribute('class','like-btn');
-    
-            let likeButtonImage = document.createElement("img");
-            likeButtonImage.setAttribute('class', 'like-button-image');
-            
-            propertyLink.appendChild(theImageUrl);
-            likeButtonLink.appendChild(likeButton);
-            likeButton.appendChild(likeButtonImage);
-            divGridAreas.appendChild(propertyLink);
-            divGridAreas.appendChild(likeButtonLink);
-            container.appendChild(divGridAreas);
         
-            document.getElementsByClassName('likeButtonLink')[i].href = "https://www.airbnb.rs/login";
-            document.getElementsByClassName('like-button-image')[i].src = "images/pngegg.png";
-            document.getElementsByClassName('imageUrl')[i].src = data.properties[i].imageUrl;
-            document.getElementsByClassName('propLink')[i].href = data.properties[i].link;
-        };
         
-        function ratingAndIcon(){
+        function ratingAndIcon(i, data){
 
             let ratingDiv = document.createElement("div");
             ratingDiv.setAttribute('class', 'rating-div');
@@ -98,7 +103,7 @@ export function populateDivs(data) {
                 };
         };
         
-        function descriptionCard(){
+        function descriptionCard(i, data){
 
             let paragraph = document.createElement("p");
             paragraph.setAttribute('class', 'paragraph');
@@ -122,7 +127,7 @@ export function populateDivs(data) {
             document.getElementsByClassName('place-description')[i].innerHTML = data.properties[i].description;
         };
         
-        function ppNightAndTotal(){
+        function ppNightAndTotal(i, data){
             
             let price = document.createElement("p");
             price.setAttribute('class', 'price');
@@ -145,9 +150,9 @@ export function populateDivs(data) {
             document.getElementsByClassName('priceTotal')[i].innerHTML = ('\$') + data.properties[i].priceTotal + (' total');
         };
         
-        imagesLinksButtons();
-        ratingAndIcon();
-        descriptionCard();
-        ppNightAndTotal();
+        imagesLinksButtons(i, data);
+        ratingAndIcon(i, data);
+        descriptionCard(i, data);
+        ppNightAndTotal(i, data);
      };
 };

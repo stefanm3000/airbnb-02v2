@@ -1,9 +1,6 @@
 "use strict"
 
-let container = document.getElementById('grid-container');
-
 export function imagesLinksButtons(data, i, divGridAreas){
-
     let propertyLink = document.createElement("a");
     propertyLink.setAttribute('class', 'propLink');
 
@@ -24,8 +21,7 @@ export function imagesLinksButtons(data, i, divGridAreas){
     likeButton.appendChild(likeButtonImage);
     divGridAreas.appendChild(propertyLink);
     divGridAreas.appendChild(likeButtonLink);
-    container.appendChild(divGridAreas);
-
+    
     document.getElementsByClassName('likeButtonLink')[i].href = "https://www.airbnb.rs/login";
     document.getElementsByClassName('like-button-image')[i].src = "images/pngegg.png";
     document.getElementsByClassName('imageUrl')[i].src = data.properties[i].imageUrl;

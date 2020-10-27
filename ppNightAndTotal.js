@@ -1,11 +1,7 @@
 "use strict"
 
-export function ppNightAndTotal(i, data){
-    let divGridAreas = document.createElement("div");
-    divGridAreas.setAttribute('class', 'div-grid-areas');
-    let propertyLink = document.createElement("a");
-    propertyLink.setAttribute('class', 'propLink');
-            
+export function ppNightAndTotal(data, i, divGridAreas){
+    
     let price = document.createElement("p");
     price.setAttribute('class', 'price');
 

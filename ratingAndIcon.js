@@ -1,11 +1,6 @@
 "use strict"
 
-export function ratingAndIcon(i, data){
-    let divGridAreas = document.createElement("div");
-    divGridAreas.setAttribute('class', 'div-grid-areas');
-
-    let propertyLink = document.createElement("a");
-    propertyLink.setAttribute('class', 'propLink');
+export function ratingAndIcon(data, i, divGridAreas){
 
     let ratingDiv = document.createElement("div");
     ratingDiv.setAttribute('class', 'rating-div');
@@ -28,7 +23,7 @@ export function ratingAndIcon(i, data){
     ratingDiv.appendChild(icons);
     ratingDiv.appendChild(averageRatingTwo);
     ratingDiv.appendChild(paren);
-    propertyLink.appendChild(ratingDiv);
+    divGridAreas.appendChild(ratingDiv);
 
     document.getElementsByClassName('ratingAvg')[i].innerHTML = data.properties[i].rating.toFixed(2);
     document.getElementsByClassName('numberOfReviews')[i].innerHTML = ('(') + data.properties[i].numOfReviews + (')');

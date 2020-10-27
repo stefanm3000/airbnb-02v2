@@ -1,10 +1,9 @@
 "use strict"
 
-export function imagesLinksButtons(i, data){
-    let container = document.getElementById('grid-container');
+export function imagesLinksButtons(data, i, divGridAreas){
 
-    let divGridAreas = document.createElement("div");
-    divGridAreas.setAttribute('class', 'div-grid-areas');
+    let container = document.getElementById('grid-container');
+    
     let propertyLink = document.createElement("a");
     propertyLink.setAttribute('class', 'propLink');
 

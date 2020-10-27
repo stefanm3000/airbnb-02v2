@@ -1,6 +1,9 @@
 "use strict"
 
-export function imagesLinksButtons(data, i, divGridAreas){
+export function imagesLinksButtons(i){
+
+    let a = document.createElement("div");
+    
     let propertyLink = document.createElement("a");
     propertyLink.setAttribute('class', 'propLink');
 
@@ -19,11 +22,8 @@ export function imagesLinksButtons(data, i, divGridAreas){
     propertyLink.appendChild(theImageUrl);
     likeButtonLink.appendChild(likeButton);
     likeButton.appendChild(likeButtonImage);
-    divGridAreas.appendChild(propertyLink);
-    divGridAreas.appendChild(likeButtonLink);
-    
-    document.getElementsByClassName('likeButtonLink')[i].href = "https://www.airbnb.rs/login";
-    document.getElementsByClassName('like-button-image')[i].src = "images/pngegg.png";
-    document.getElementsByClassName('imageUrl')[i].src = data.properties[i].imageUrl;
-    document.getElementsByClassName('propLink')[i].href = data.properties[i].link;
+    a.appendChild(propertyLink);
+    a.appendChild(likeButtonLink);
+
+    return a;
 };

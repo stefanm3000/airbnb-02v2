@@ -1,6 +1,6 @@
 "use strict"
 
-export function descriptionCard(data, i, divGridAreas){
+export function descriptionCard(i){
 
     let paragraph = document.createElement("p");
     paragraph.setAttribute('class', 'paragraph');
@@ -17,9 +17,6 @@ export function descriptionCard(data, i, divGridAreas){
     paragraph.appendChild(propertySize);
     paragraph.appendChild(placeLocation);
     paragraph.appendChild(placeDescription);
-    divGridAreas.appendChild(paragraph);
 
-    document.getElementsByClassName('propSize')[i].innerHTML = data.properties[i].propSize + (' · ');
-    document.getElementsByClassName('location')[i].innerHTML = data.properties[i].location + ("<br>");
-    document.getElementsByClassName('place-description')[i].innerHTML = data.properties[i].description;
+    return paragraph;
 };

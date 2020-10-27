@@ -1,6 +1,6 @@
 "use strict"
 
-export function ppNightAndTotal(data, i, divGridAreas){
+export function ppNightAndTotal(i){
     
     let price = document.createElement("p");
     price.setAttribute('class', 'price');
@@ -17,8 +17,6 @@ export function ppNightAndTotal(data, i, divGridAreas){
     price.appendChild(ppNight);
     price.appendChild(popup);
     popup.appendChild(totalPrice);
-    divGridAreas.appendChild(price);
-
-    document.getElementsByClassName('pricePerNight')[i].innerHTML = (('\$') + data.properties[i].pricePerNight).bold() + (' / night') + ("<br>");
-    document.getElementsByClassName('priceTotal')[i].innerHTML = ('\$') + data.properties[i].priceTotal + (' total');
+    
+    return price;
 };

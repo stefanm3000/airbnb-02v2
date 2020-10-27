@@ -1,11 +1,13 @@
 "use strict"
 
+
+
 import {imagesLinksButtons} from './imagesLinksButtons.js';
 import {ratingAndIcon} from './ratingAndIcon.js';
 import {descriptionCard} from './descriptionCard.js';
 import {ppNightAndTotal} from './ppNightAndTotal.js';
 
-export function populateDivs(data, i) {
+export function populateDivs(data) {
 
     for (let i = 0; i < data.properties.length; i++) {
 

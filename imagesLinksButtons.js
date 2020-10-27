@@ -1,9 +1,9 @@
 "use strict"
 
+let container = document.getElementById('grid-container');
+
 export function imagesLinksButtons(data, i, divGridAreas){
 
-    let container = document.getElementById('grid-container');
-    
     let propertyLink = document.createElement("a");
     propertyLink.setAttribute('class', 'propLink');
 

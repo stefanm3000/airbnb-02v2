@@ -20,14 +20,14 @@ export function ratingAndIcon(i, data){
     reviewsNumber.innerHTML = ('(') + data.properties[i].numOfReviews + (')');
 
     if (data.properties[i].rating === 0.00) {
-        averageRatingTwo.innerHTML = "New"};
+        averageRatingTwo.innerHTML = "New"
+        };
 
     if (data.properties[i].numOfReviews === 0) {
-
         icons[i].style.visibility = "hidden";
         averageRatingTwo[i].innerHTML = ('No reviews yet');
         paren[i].style.visibility = "hidden";
-    };
+        };
 
     if (data.properties[i].numOfReviews === null) {
         paren.style.visibility = "hidden";
@@ -38,18 +38,18 @@ export function ratingAndIcon(i, data){
         data.properties[i].rating === 3.00 ||
         data.properties[i].rating === 2.00 ||
         data.properties[i].rating === 1.00) {
-                averageRatingTwo.innerHTML = data.properties[i].rating.toFixed(1)
-            };
+             averageRatingTwo.innerHTML = data.properties[i].rating.toFixed(1)
+        };
 
-        if (data.properties[i].numOfReviews === 1) {
-            averageRatingTwo.innerHTML = ('1 review');
-            paren.style.visibility = "hidden";
-            };
-    
-        if (data.properties[i].numOfReviews === 2) {
-            averageRatingTwo.innerHTML = ('2 reviews');
-            paren.style.visibility = "hidden";
-            };
+    if (data.properties[i].numOfReviews === 1) {
+        averageRatingTwo.innerHTML = ('1 review');
+        paren.style.visibility = "hidden";
+        };
+
+    if (data.properties[i].numOfReviews === 2) {
+        averageRatingTwo.innerHTML = ('2 reviews');
+        paren.style.visibility = "hidden";
+        };
 
     icons.innerHTML = "star";
 

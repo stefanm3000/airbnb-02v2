@@ -12,4 +12,4 @@ fetch("properties.json")
     .then(function(data) {
         populateDivs(data);
     });
-}
+};

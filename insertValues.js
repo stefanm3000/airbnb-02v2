@@ -1,10 +1,10 @@
+"use strict"
+
 export function insertValues(i, data){
         document.getElementsByClassName('likeButtonLink')[i].href = "https://www.airbnb.rs/login";
         document.getElementsByClassName('like-button-image')[i].src = "images/pngegg.png";
         document.getElementsByClassName('imageUrl')[i].src = data.properties[i].imageUrl;
         document.getElementsByClassName('propLink')[i].href = data.properties[i].link;
-
-
 
         document.getElementsByClassName('ratingAvg')[i].innerHTML = data.properties[i].rating.toFixed(2);
         document.getElementsByClassName('numberOfReviews')[i].innerHTML = ('(') + data.properties[i].numOfReviews + (')');
@@ -39,14 +39,10 @@ export function insertValues(i, data){
         document.getElementsByClassName('paren')[i].style.visibility = "hidden";
         };
 
-
-
     document.getElementsByClassName('propSize')[i].innerHTML = data.properties[i].propSize + (' · ');
     document.getElementsByClassName('location')[i].innerHTML = data.properties[i].location + ("<br>");
     document.getElementsByClassName('place-description')[i].innerHTML = data.properties[i].description;
     
-
-
     document.getElementsByClassName('pricePerNight')[i].innerHTML = (('\$') + data.properties[i].pricePerNight).bold() + (' / night') + ("<br>");
     document.getElementsByClassName('priceTotal')[i].innerHTML = ('\$') + data.properties[i].priceTotal + (' total');
 }

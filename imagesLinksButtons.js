@@ -1,6 +1,6 @@
 "use strict"
 
-export function imagesLinksButtons(i, data){
+export function imagesLinksButtons(i, data.properties.link, data.properties.imageUrl){
 
     let a = document.createElement("div");
     

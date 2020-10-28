@@ -1,16 +1,16 @@
 "use strict"
 
-export function imagesLinksButtons(i, data.properties[i].link, data.properties[i].imageUrl){
+export function imagesLinksButtons(link, imageUrl){
 
     let a = document.createElement("div");
     
     let propertyLink = document.createElement("a");
     propertyLink.setAttribute('class', 'propLink');
-    propertyLink.setAttribute('href', data.properties[i].link);
+    propertyLink.setAttribute('href', link);
 
     let theImageUrl = document.createElement("img");
     theImageUrl.setAttribute('class', 'imageUrl place-photo');
-    theImageUrl.setAttribute('src', data.properties[i].imageUrl)
+    theImageUrl.setAttribute('src', imageUrl)
     
     let likeButtonLink = document.createElement("A");
     likeButtonLink.setAttribute('class', 'likeButtonLink');

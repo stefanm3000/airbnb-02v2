@@ -14,15 +14,15 @@ export function populateDivs(data) {
         let divGridAreas = document.createElement("div");
         divGridAreas.setAttribute('class', 'div-grid-areas');
         
-        imagesLinksButtons(i, data.properties[i].link, data.properties[i].imageUrl);
-        ratingAndIcon(i, data);
-        descriptionCard(i, data);
-        ppNightAndTotal(i, data);
+        imagesLinksButtons(data.properties[i].link, data.properties[i].imageUrl);
+        ratingAndIcon(data.properties[i].rating, data.properties[i].numOfReviews);
+        descriptionCard(data.properties[i].propSize, data.properties[i].location, data.properties[i].description);
+        ppNightAndTotal(data.properties[i].pricePerNight, data.properties[i].priceTotal);
         
-        divGridAreas.appendChild(imagesLinksButtons(i, data.properties[i].link, data.properties[i].imageUrl));
-        divGridAreas.appendChild(ratingAndIcon(i, data));
-        divGridAreas.appendChild(descriptionCard(i, data));
-        divGridAreas.appendChild(ppNightAndTotal(i, data));
+        divGridAreas.appendChild(imagesLinksButtons(data.properties[i].link, data.properties[i].imageUrl));
+        divGridAreas.appendChild(ratingAndIcon(data.properties[i].rating, data.properties[i].numOfReviews));
+        divGridAreas.appendChild(descriptionCard(data.properties[i].propSize, data.properties[i].location, data.properties[i].description));
+        divGridAreas.appendChild(ppNightAndTotal(data.properties[i].pricePerNight, data.properties[i].priceTotal));
         
         container.appendChild(divGridAreas);
      };

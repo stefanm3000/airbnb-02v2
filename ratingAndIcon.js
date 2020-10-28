@@ -1,6 +1,6 @@
 "use strict"
 
-export function ratingAndIcon(i, data){
+export function ratingAndIcon(rating, reviewsNumero){
 
     let ratingDiv = document.createElement("div");
     ratingDiv.setAttribute('class', 'rating-div');
@@ -10,43 +10,43 @@ export function ratingAndIcon(i, data){
     
     let averageRatingTwo = document.createElement("span");
     averageRatingTwo.setAttribute('class', 'ratingAvg');
-    averageRatingTwo.innerHTML = data.properties[i].rating.toFixed(2);
+    averageRatingTwo.innerHTML = rating.toFixed(2);
     
     let paren = document.createElement("span");
     paren.setAttribute('class', 'paren');
     
     let reviewsNumber = document.createElement("span");
     reviewsNumber.setAttribute('class', 'numberOfReviews');
-    reviewsNumber.innerHTML = ('(') + data.properties[i].numOfReviews + (')');
+    reviewsNumber.innerHTML = ('(') + reviewsNumero + (')');
 
-    if (data.properties[i].rating === 0.00) {
+    if (rating === 0.00) {
         averageRatingTwo.innerHTML = "New"
         };
 
-    if (data.properties[i].numOfReviews === 0) {
-        icons[i].style.visibility = "hidden";
+    if (reviewsNumero === 0) {
+        icons.style.visibility = "hidden";
         averageRatingTwo[i].innerHTML = ('No reviews yet');
-        paren[i].style.visibility = "hidden";
-        };
-
-    if (data.properties[i].numOfReviews === null) {
         paren.style.visibility = "hidden";
         };
 
-    if (data.properties[i].rating === 5.00 || 
-        data.properties[i].rating === 4.00 ||
-        data.properties[i].rating === 3.00 ||
-        data.properties[i].rating === 2.00 ||
-        data.properties[i].rating === 1.00) {
-             averageRatingTwo.innerHTML = data.properties[i].rating.toFixed(1)
+    if (reviewsNumero === null) {
+        paren.style.visibility = "hidden";
         };
 
-    if (data.properties[i].numOfReviews === 1) {
+    if (rating === 5.00 || 
+        rating === 4.00 ||
+        rating === 3.00 ||
+        rating === 2.00 ||
+        rating === 1.00) {
+             averageRatingTwo.innerHTML = rating.toFixed(1)
+        };
+
+    if (reviewsNumero === 1) {
         averageRatingTwo.innerHTML = ('1 review');
         paren.style.visibility = "hidden";
         };
 
-    if (data.properties[i].numOfReviews === 2) {
+    if (reviewsNumero === 2) {
         averageRatingTwo.innerHTML = ('2 reviews');
         paren.style.visibility = "hidden";
         };

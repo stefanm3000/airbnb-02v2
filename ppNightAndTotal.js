@@ -1,20 +1,20 @@
 "use strict"
 
-export function ppNightAndTotal(i, data){
+export function ppNightAndTotal(pricePerNight, priceTot){
     
     let price = document.createElement("p");
     price.setAttribute('class', 'price');
 
     let ppNight = document.createElement("span");
     ppNight.setAttribute('class', 'pricePerNight');
-    ppNight.innerHTML = (('\$') + data.properties[i].pricePerNight).bold() + (' / night') + ("<br>");
+    ppNight.innerHTML = (('\$') + pricePerNight).bold() + (' / night') + ("<br>");
 
     let popup = document.createElement("button");
     popup.setAttribute('class', 'popup');
 
     let totalPrice = document.createElement("span");
     totalPrice.setAttribute('class', 'priceTotal');
-    totalPrice.innerHTML = ('\$') + data.properties[i].priceTotal + (' total');
+    totalPrice.innerHTML = ('\$') + priceTot + (' total');
 
     price.appendChild(ppNight);
     price.appendChild(popup);

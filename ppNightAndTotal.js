@@ -19,5 +19,6 @@ export function ppNightAndTotal(pricePerNight, priceTot){
     price.appendChild(ppNight);
     price.appendChild(popup);
     popup.appendChild(totalPrice);
+    
     return price;
 };

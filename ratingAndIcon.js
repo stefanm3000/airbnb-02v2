@@ -25,7 +25,7 @@ export function ratingAndIcon(rating, reviewsNumero){
 
     if (reviewsNumero === 0) {
         icons.style.visibility = "hidden";
-        averageRatingTwo[i].innerHTML = ('No reviews yet');
+        averageRatingTwo.innerHTML = ('No reviews yet');
         paren.style.visibility = "hidden";
         };
 

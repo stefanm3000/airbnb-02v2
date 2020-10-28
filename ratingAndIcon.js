@@ -18,6 +18,10 @@ export function ratingAndIcon(rating, reviewsNumero){
     let reviewsNumber = document.createElement("span");
     reviewsNumber.setAttribute('class', 'numberOfReviews');
     reviewsNumber.innerHTML = ('(') + reviewsNumero + (')');
+    
+    if (Number.isInteger(rating)) {
+        averageRatingTwo.innerHTML = rating.toFixed(1)
+        };
 
     if (rating === 0.00) {
         averageRatingTwo.innerHTML = "New"
@@ -31,14 +35,6 @@ export function ratingAndIcon(rating, reviewsNumero){
 
     if (reviewsNumero === null) {
         paren.style.visibility = "hidden";
-        };
-
-    if (rating === 5.00 || 
-        rating === 4.00 ||
-        rating === 3.00 ||
-        rating === 2.00 ||
-        rating === 1.00) {
-             averageRatingTwo.innerHTML = rating.toFixed(1)
         };
 
     if (reviewsNumero === 1) {

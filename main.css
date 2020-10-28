@@ -19,6 +19,10 @@ a {
     color: #222222;
 }
 
+button {
+    padding: 0px;
+}
+
 .div-grid-areas {
     position: relative;
 }
@@ -82,7 +86,7 @@ i.material-icons {
     border: none;
     background-color: white;
     text-decoration: underline;
-    padding: 7px 0px 70px 1px;
+    margin: 7px 0px 70px 1px;
     color: gray;
     font-size: 14px;
 }

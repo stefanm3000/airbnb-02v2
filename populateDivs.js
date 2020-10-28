@@ -8,7 +8,7 @@ export function populateDivs(data) {
     
     for (let i = 0; i < data.properties.length; i++) {
         
-        container.appendChild(createPropertyCard(data.properties, i));
+        container.appendChild(createPropertyCard(data.properties[i]));
 
      };
 };

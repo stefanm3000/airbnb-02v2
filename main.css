@@ -23,6 +23,19 @@ button {
     padding: 0px;
 }
 
+.searchWrapper {
+    margin-top: 4%;
+    margin-left: 40%;
+    width: 50%;
+    height: 3rem;
+}
+
+#searchBar {
+    width: 40%;
+    height: 2rem;
+    border-style: dashed;
+}
+
 .div-grid-areas {
     position: relative;
 }

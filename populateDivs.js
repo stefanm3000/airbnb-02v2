@@ -6,9 +6,9 @@ let container = document.getElementById('grid-container');
 
 export function populateDivs(data) {
     
-    for (let i = 0; i < data.properties.length; i++) {
+    for (let i = 0; i < data.length; i++) {
         
-        container.appendChild(createPropertyCard(data.properties[i]));
+        container.appendChild(createPropertyCard(data[i]));
 
      };
 };

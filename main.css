@@ -38,6 +38,7 @@ button {
 
 .div-grid-areas {
     position: relative;
+    max-width: 300px;
 }
 
 .place-photo {

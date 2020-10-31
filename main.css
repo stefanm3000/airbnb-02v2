@@ -24,14 +24,12 @@ button {
 }
 
 .searchWrapper {
-    margin-top: 4%;
-    margin-left: 40%;
-    width: 50%;
-    height: 3rem;
+    margin: auto;
+    width: 300px;
 }
 
 #searchBar {
-    width: 40%;
+    width: 300px;
     height: 2rem;
     border-style: dashed;
     min-width: 170px;

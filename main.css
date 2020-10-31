@@ -26,6 +26,8 @@ button {
 .searchWrapper {
     margin: auto;
     width: 300px;
+    margin-top: 50px;
+    min-width: 170px;
 }
 
 #searchBar {
@@ -38,6 +40,7 @@ button {
 .div-grid-areas {
     position: relative;
     max-width: 300px;
+    margin: auto;
 }
 
 .place-photo {

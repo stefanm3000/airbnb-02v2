@@ -21,7 +21,7 @@ export function imagesLinksButtons(link, imageUrl){
 
     let likeButtonImage = document.createElement("img");
     likeButtonImage.setAttribute('class', 'like-button-image');
-    likeButtonImage.setAttribute('src', 'images/pngegg.png')
+    likeButtonImage.setAttribute('src', 'assets/images/pngegg.png')
     
     propertyLink.appendChild(theImageUrl);
     likeButtonLink.appendChild(likeButton);

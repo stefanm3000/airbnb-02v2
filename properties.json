@@ -2,7 +2,7 @@
    "properties":[
    {
       "link":"https://www.airbnb.com/rooms/19807225",
-      "imageUrl":"images/1.webp",
+      "imageUrl":"assets/images/1.webp",
       "rating":4.96, 
       "numOfReviews":47,
       "propSize":"Entire house",
@@ -13,7 +13,7 @@
    },
    {
        "link":"https://www.airbnb.ca/rooms/33507693",
-      "imageUrl":"images/2.webp",
+      "imageUrl":"assets/images/2.webp",
       "rating":4.80, 
       "numOfReviews":5,
       "propSize":"Entire apartment",
@@ -24,7 +24,7 @@
    },
    {
        "link":"https://www.airbnb.com/rooms/4785350",
-      "imageUrl":"images/3.jpg",
+      "imageUrl":"assets/images/3.jpg",
       "rating":4.43, 
       "numOfReviews":23,
       "propSize":"Private room",
@@ -35,7 +35,7 @@
     },
     {
        "link":"https://www.airbnb.com/rooms/43929689",
-       "imageUrl":"images/4.webp",
+       "imageUrl":"assets/images/4.webp",
        "rating":5.0, 
        "numOfReviews":6,
        "propSize":"Entire house",
@@ -46,7 +46,7 @@
     },
     {
        "link":"https://www.airbnb.com/rooms/44955389",
-      "imageUrl":"images/5.webp",
+      "imageUrl":"assets/images/5.webp",
       "rating":0, 
       "numOfReviews":null,
       "propSize":"Entire cottage",
@@ -57,7 +57,7 @@
     },
     {
        "link":"https://www.airbnb.com/rooms/43720630",
-      "imageUrl":"images/6.webp",
+      "imageUrl":"assets/images/6.webp",
       "rating":5.0, 
       "numOfReviews":4,
       "propSize":"Entire cottage",
@@ -68,7 +68,7 @@
     },
     {
        "link":"https://www.airbnb.com/rooms/44534575",
-      "imageUrl":"images/7.webp",
+      "imageUrl":"assets/images/7.webp",
       "rating":0, 
       "numOfReviews":null,
       "propSize":"Entire house",
@@ -79,7 +79,7 @@
     },
     {
        "link":"https://www.airbnb.com/rooms/30280643",
-       "imageUrl":"images/8.webp",
+       "imageUrl":"assets/images/8.webp",
        "rating":4.94, 
        "numOfReviews":52,
        "propSize":"Entire apartment",
@@ -90,7 +90,7 @@
     },
     {
        "link":"https://www.airbnb.com/rooms/45509963",
-       "imageUrl":"images/9.jpg",
+       "imageUrl":"assets/images/9.jpg",
        "rating":0, 
        "numOfReviews":null,
        "propSize":"Private room",
@@ -101,7 +101,7 @@
     },
     {
        "link":"https://www.airbnb.com/rooms/2673790",
-       "imageUrl":"images/10.webp",
+       "imageUrl":"assets/images/10.webp",
        "rating":4.94, 
        "numOfReviews":18,
        "propSize":"Private room",

@@ -1,6 +1,6 @@
 "use strict"
 
-//import {createSearchElements} from './search.js';
+import {createSearchElements, filtering} from './search.js';
 import {populateDivs} from './populateDivs.js';
 
 document.addEventListener('DOMContentLoaded', main);
@@ -16,45 +16,10 @@ function main(){
                 return resp.json();
         })
             .then(function(data) {
+                createSearchElements(searchWrap);
                 populateDivs(filtering(data, searchQuery));
             });
-
-        
-        const searchWrapper = document.getElementsByClassName('searchWrapper');
-        const searchBar = document.createElement('input');
-                
-        const container = document.getElementById('grid-container');
-                
-        searchBar.setAttribute('type', 'text');
-        searchBar.setAttribute('id', 'searchBar');
-        searchBar.setAttribute('placeholder', 'Search by description here')
-                
-        searchWrapper[0].appendChild(searchBar);
-
-
-        searchBar.addEventListener('keyup', (x) => {
-            
-                const searchString = x.target.value.toLowerCase();
-
-                container.innerHTML = '';
-                searchWrap(searchString);
-            })
-        
-        
-        function filtering(data, searchQuery){
-        
-            const filteredProperties = data.properties.filter((property) => {
-                return (
-                    property.description.toLowerCase().includes(searchQuery) ||
-                    property.location.toLowerCase().includes(searchQuery) ||
-                    property.propSize.toLowerCase().includes(searchQuery)
-                    );
-            })
-                
-            return filteredProperties;
-        }
     }
-
 
     searchWrap();
 };

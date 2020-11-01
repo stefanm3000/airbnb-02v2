@@ -1,29 +1,28 @@
-/*"use strict"
-import {populateDivs} from './populateDivs.js';
+"use strict"
 
-export function createSearchElements(data, searchQuery=''){
+export function createSearchElements(y){
     
-    const container = document.getElementById('grid-container');
-    const searchWrapper = document.getElementsByClassName('searchWrapper');
-    const searchBar = document.createElement('input');
+        const searchWrapper = document.getElementsByClassName('searchWrapper');
+        const searchBar = document.createElement('input');
+        const container = document.getElementById('grid-container');
 
-    searchBar.setAttribute('type', 'text');
-    searchBar.setAttribute('id', 'searchBar');
-    searchBar.setAttribute('placeholder', 'Search by description here')
+        searchBar.setAttribute('type', 'text');
+        searchBar.setAttribute('id', 'searchBar');
+        searchBar.setAttribute('placeholder', 'Search by description here')
 
-    searchWrapper[0].appendChild(searchBar);
+        searchWrapper[0].appendChild(searchBar);
 
-    searchBar.addEventListener('keyup', (x) => {
+        searchBar.addEventListener('keyup', (x) => {
+            
+                const searchString = x.target.value.toLowerCase();
+
+                container.innerHTML = '';
+                y(searchString);
+            })
         
-        const searchString = x.target.value.toLowerCase();
-
-        container.innerHTML = '';
-        populateDivs(filtering(data, searchString))
-        
-    })
 }
 
-function filtering(data, searchQuery=''){
+export function filtering(data, searchQuery=''){
 
     const filteredProperties = data.properties.filter((property) => {
         return (
@@ -34,4 +33,4 @@ function filtering(data, searchQuery=''){
     })
         
     return filteredProperties;
-}*/
+}

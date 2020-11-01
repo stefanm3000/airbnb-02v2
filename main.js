@@ -1,7 +1,7 @@
 "use strict"
 
-import {createSearchElements, filtering} from '../components/search.js';
-import {populateDivs} from '../components/populateDivs.js';
+import {createSearchElements, filtering} from './components/search.js';
+import {populateDivs} from './components/populateDivs.js';
 
 document.addEventListener('DOMContentLoaded', main);
 

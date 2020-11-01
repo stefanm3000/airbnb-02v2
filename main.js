@@ -5,6 +5,7 @@ import {populateDivs} from './populateDivs.js';
 
 document.addEventListener('DOMContentLoaded', main);
 
+
 function main(){
     
     
@@ -16,8 +17,9 @@ function main(){
                 return resp.json();
         })
             .then(function(data) {
-                createSearchElements(searchWrap);
-                populateDivs(filtering(data, searchQuery));
+                 
+            createSearchElements(searchWrap);
+            populateDivs(filtering(data, searchQuery));
             });
     }
 

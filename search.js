@@ -15,24 +15,29 @@ export function createSearchElements(){
 }
 
 export function search(data){
-    
+
     let container = document.getElementById('grid-container');
 
     const searchBar = document.getElementById('searchBar');
 
     searchBar.addEventListener('keyup', (x) => {
+        
         const searchString = x.target.value.toLowerCase();
 
         const filteredProperties = data.properties.filter((property) => {
             return (
-                property.description.toLowerCase().includes(searchString)
+                property.description.toLowerCase().includes(searchString) ||
+                property.location.toLowerCase().includes(searchString) ||
+                property.propSize.toLowerCase().includes(searchString)
             );
         });
+        
         container.innerHTML = '';
         populateDivs(filteredProperties);
 
         if (filteredProperties.length == false) {
             alert('There are no properties with that description')
         }
+
     });
 }

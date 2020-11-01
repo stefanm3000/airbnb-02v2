@@ -1,6 +1,6 @@
 "use strict"
 
-export function createSearchElements(y){
+export function createSearchElements(onChange){
     
         const searchWrapper = document.getElementsByClassName('searchWrapper');
         const searchBar = document.createElement('input');
@@ -15,11 +15,10 @@ export function createSearchElements(y){
         searchBar.addEventListener('keyup', (x) => {
             
                 const searchString = x.target.value.toLowerCase();
-
                 container.innerHTML = '';
-                y(searchString);
+                onChange(searchString);
+
             })
-        
 }
 
 export function filtering(data, searchQuery=''){

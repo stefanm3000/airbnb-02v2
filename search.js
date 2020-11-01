@@ -1,9 +1,9 @@
-"use strict"
-
+/*"use strict"
 import {populateDivs} from './populateDivs.js';
 
-export function createSearchElements(){
+export function createSearchElements(data, searchQuery=''){
     
+    const container = document.getElementById('grid-container');
     const searchWrapper = document.getElementsByClassName('searchWrapper');
     const searchBar = document.createElement('input');
 
@@ -12,32 +12,26 @@ export function createSearchElements(){
     searchBar.setAttribute('placeholder', 'Search by description here')
 
     searchWrapper[0].appendChild(searchBar);
-}
-
-export function search(data){
-
-    let container = document.getElementById('grid-container');
-
-    const searchBar = document.getElementById('searchBar');
 
     searchBar.addEventListener('keyup', (x) => {
         
         const searchString = x.target.value.toLowerCase();
 
-        const filteredProperties = data.properties.filter((property) => {
-            return (
-                property.description.toLowerCase().includes(searchString) ||
-                property.location.toLowerCase().includes(searchString) ||
-                property.propSize.toLowerCase().includes(searchString)
-            );
-        });
-        
         container.innerHTML = '';
-        populateDivs(filteredProperties);
-
-        if (filteredProperties.length == false) {
-            alert('There are no properties with that description')
-        }
-
-    });
+        populateDivs(filtering(data, searchString))
+        
+    })
 }
+
+function filtering(data, searchQuery=''){
+
+    const filteredProperties = data.properties.filter((property) => {
+        return (
+            property.description.toLowerCase().includes(searchQuery) ||
+            property.location.toLowerCase().includes(searchQuery) ||
+            property.propSize.toLowerCase().includes(searchQuery)
+            );
+    })
+        
+    return filteredProperties;
+}*/

@@ -1,18 +1,60 @@
 "use strict"
 
+//import {createSearchElements} from './search.js';
 import {populateDivs} from './populateDivs.js';
-import {createSearchElements, search} from './search.js'
 
 document.addEventListener('DOMContentLoaded', main);
 
 function main(){
-fetch("properties.json")
-    .then(function(resp) {
-        return resp.json();
-})
-    .then(function(data) {
-        createSearchElements();
-        populateDivs(data.properties);
-        search(data);
-    });
+    
+    
+
+    function searchWrap(searchQuery=''){
+
+        fetch("properties.json")
+            .then(function(resp) {
+                return resp.json();
+        })
+            .then(function(data) {
+                populateDivs(filtering(data, searchQuery));
+            });
+
+        
+        const searchWrapper = document.getElementsByClassName('searchWrapper');
+        const searchBar = document.createElement('input');
+                
+        const container = document.getElementById('grid-container');
+                
+        searchBar.setAttribute('type', 'text');
+        searchBar.setAttribute('id', 'searchBar');
+        searchBar.setAttribute('placeholder', 'Search by description here')
+                
+        searchWrapper[0].appendChild(searchBar);
+
+
+        searchBar.addEventListener('keyup', (x) => {
+            
+                const searchString = x.target.value.toLowerCase();
+
+                container.innerHTML = '';
+                searchWrap(searchString);
+            })
+        
+        
+        function filtering(data, searchQuery){
+        
+            const filteredProperties = data.properties.filter((property) => {
+                return (
+                    property.description.toLowerCase().includes(searchQuery) ||
+                    property.location.toLowerCase().includes(searchQuery) ||
+                    property.propSize.toLowerCase().includes(searchQuery)
+                    );
+            })
+                
+            return filteredProperties;
+        }
+    }
+
+
+    searchWrap();
 };

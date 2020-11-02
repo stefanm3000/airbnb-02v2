@@ -1,7 +1,8 @@
 "use strict"
 
-import {createSearchElements, filtering} from './components/search.js';
-import {populateDivs} from './components/populateDivs.js';
+import {createSearchElements} from './components/search.js';
+
+import getProperties from './propertyService.js';
 
 document.addEventListener('DOMContentLoaded', main);
 
@@ -10,15 +11,11 @@ function main(){
     
     function searchWrap(searchQuery=''){
 
-        fetch("properties.json")
-            .then(function(resp) {
-                return resp.json();
-        })
-            .then(function(data) {
-            populateDivs(filtering(data, searchQuery));
-            });
+        getProperties(searchQuery);
+
     }
 
     searchWrap();
     createSearchElements(searchWrap)
+
 };

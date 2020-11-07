@@ -10,11 +10,7 @@ function main(){
 
     async function searchWrap(searchQuery=''){
         
-        const properties = await propertyService.getProperties(searchQuery)
-        .catch(error => {
-            error.message;
-          });
-          
+        const properties = await propertyService.getProperties(searchQuery);   
         populateDivs(properties);
     }
 

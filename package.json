@@ -1,0 +1,19 @@
+{
+  "name": "airbnb-clone-js",
+  "version": "1.0.0",
+  "description": "Airbnb website clone made with vanilla JS.",
+  "main": "main.js",
+  "scripts": {
+    "test": "\u001b[D"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefanm3000/airbnb-02v2.git"
+  },
+  "author": "Stefan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stefanm3000/airbnb-02v2/issues"
+  },
+  "homepage": "https://github.com/stefanm3000/airbnb-02v2#readme"
+}

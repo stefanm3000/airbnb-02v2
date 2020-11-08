@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/stefanm3000/airbnb-02v2/issues"
   },
-  "homepage": "https://github.com/stefanm3000/airbnb-02v2#readme"
+  "homepage": "https://github.com/stefanm3000/airbnb-02v2#readme",
+  "devDependencies": {
+    "prettier": "2.1.2"
+  }
 }

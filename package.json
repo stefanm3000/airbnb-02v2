@@ -3,8 +3,20 @@
   "version": "1.0.0",
   "description": "Airbnb website clone made with vanilla JS.",
   "main": "main.js",
+  "dependencies": {
+    "express": "*"
+  },
   "scripts": {
-    "test": "\u001b[D"
+    "pre-commit": "lint-staged"
+  },
+  "pre-commit": [
+    "pre-commit"
+  ],
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
@@ -17,13 +29,8 @@
   },
   "homepage": "https://github.com/stefanm3000/airbnb-02v2#readme",
   "devDependencies": {
-    "husky": "^4.3.0",
-    "prettier": "2.1.2",
-    "pretty-quick": "^3.1.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
+    "lint-staged": "^10.5.1",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.1.2"
   }
 }

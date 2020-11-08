@@ -8,8 +8,12 @@ document.addEventListener("DOMContentLoaded", main);
 
 function main() {
   async function searchWrap(searchQuery = "") {
-    const properties = await propertyService.getProperties(searchQuery);
-    populateDivs(properties);
+    try {
+      const properties = await propertyService.getProperties(searchQuery);
+      populateDivs(properties);
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   searchWrap();

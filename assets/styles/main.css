@@ -1,156 +1,157 @@
-@media only screen and (max-width: 631.5px){
-    
-    .div-grid-areas {
-        position: relative;
-        max-width: 300px;
-        margin: auto;
-        max-height: 320px;
-    }
-        
+@media only screen and (max-width: 631.5px) {
+  .div-grid-areas {
+    position: relative;
+    max-width: 300px;
+    margin: auto;
+    max-height: 320px;
+  }
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(16rem, 100%), 1fr));
-    grid-template-rows: 1fr 1fr;
-    gap: 1%;
-    margin: 8%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(16rem, 100%), 1fr));
+  grid-template-rows: 1fr 1fr;
+  gap: 1%;
+  margin: 8%;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-} 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
 
 a {
-    text-decoration: none;
-    color: #222222;
+  text-decoration: none;
+  color: #222222;
 }
 
 button {
-    padding: 0px;
+  padding: 0px;
 }
 
 .searchWrapper {
-    margin: auto;
-    width: 300px;
-    margin-top: 50px;
-    min-width: 170px;
+  margin: auto;
+  width: 300px;
+  margin-top: 50px;
+  min-width: 170px;
 }
 
 #searchBar {
-    width: 300px;
-    height: 2rem;
-    border-style: dashed;
-    min-width: 170px;
+  width: 300px;
+  height: 2rem;
+  border-style: dashed;
+  min-width: 170px;
 }
 
 .div-grid-areas {
-    position: relative;
-    max-width: 300px;
+  position: relative;
+  max-width: 300px;
 }
 
 .place-photo {
-    object-fit: cover;
-    width: 100%;
-    height: 200px;
-    max-height: 400px;
-    min-height: 150px;
-    border-radius: 3.5%;
-  }
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+  max-height: 400px;
+  min-height: 150px;
+  border-radius: 3.5%;
+}
 
 p {
-    font-size: 16px;
-    font-style: normal;
-    margin: 2px;
-    font-weight: normal;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 100%      
+  font-size: 16px;
+  font-style: normal;
+  margin: 2px;
+  font-weight: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
 }
 
 i.material-icons {
-    font-size: 16px;
-    color: #F41A52;
-    padding-right: 5px;
+  font-size: 16px;
+  color: #f41a52;
+  padding-right: 5px;
 }
 
 .price {
-    padding: 2px 0px 0px 0px;
+  padding: 2px 0px 0px 0px;
 }
 
-.like-btn { 
-    z-index: 3;
-    position: absolute;
-    top: 5%;
-    left: 93%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    font-size: 16px;
-    padding: 0px 0px;
-    border: none;
-    background-repeat:no-repeat;
-    cursor:pointer;
-    overflow: hidden;
-    background-color: transparent;
-    outline: none;
+.like-btn {
+  z-index: 3;
+  position: absolute;
+  top: 5%;
+  left: 93%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-size: 16px;
+  padding: 0px 0px;
+  border: none;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: transparent;
+  outline: none;
 }
 
 .like-button-image {
-    width: 23px;
-    opacity: 0.8;
-    background-color: transparent;
-    fill: gray;
+  width: 23px;
+  opacity: 0.8;
+  background-color: transparent;
+  fill: gray;
 }
 
 .popup {
-    outline: none;
-    border: none;
-    background-color: white;
-    text-decoration: underline;
-    margin: 7px 0px 70px 1px;
-    color: gray;
-    font-size: 14px;
+  outline: none;
+  border: none;
+  background-color: white;
+  text-decoration: underline;
+  margin: 7px 0px 70px 1px;
+  color: gray;
+  font-size: 14px;
 }
 
 .bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .paren {
-    color: gray;
+  color: gray;
 }
 
-.new-rating { 
-    font-size: 16px;    
+.new-rating {
+  font-size: 16px;
 }
 .ratingAvg {
-    padding-right: 5px;
+  padding-right: 5px;
 }
 .numberOfReviews {
-    padding-right: 5px;
+  padding-right: 5px;
 }
 
 .pricePerNight {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 ::-webkit-input-placeholder {
-    text-align: center;
- }
- 
- :-moz-placeholder { /* Firefox 18- */
-    text-align: center;  
- }
- 
- ::-moz-placeholder {  /* Firefox 19+ */
-    text-align: center;  
- }
- 
- :-ms-input-placeholder {  
-    text-align: center; 
- }
+  text-align: center;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  text-align: center;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  text-align: center;
+}

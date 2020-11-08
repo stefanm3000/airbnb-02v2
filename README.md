@@ -1,2 +1,3 @@
 # airbnb-02v2
- airbnb clone made with JS
+
+airbnb clone made with JS

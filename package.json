@@ -17,6 +17,13 @@
   },
   "homepage": "https://github.com/stefanm3000/airbnb-02v2#readme",
   "devDependencies": {
-    "prettier": "2.1.2"
+    "husky": "^4.3.0",
+    "prettier": "2.1.2",
+    "pretty-quick": "^3.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }

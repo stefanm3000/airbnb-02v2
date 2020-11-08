@@ -14,4 +14,5 @@ function main() {
 
   searchWrap();
   createSearchElements(searchWrap);
+  
 }
